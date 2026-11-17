@@ -18,7 +18,7 @@ python -m http.server 8000
 
 Open **http://localhost:8000/** in Edge while the command runs; Ctrl+C stops the server.
 
-**Run the actual shipped app:** index.html currently references the compiled `main.js` in the repository root. You can serve it without npm. The separate TypeScript/Vite build configuration is experimental and may need additional repairs; do not assume `npm run build` succeeds. No Python packages or `venv` are required.
+**Run the actual shipped app:** index.html currently references the compiled `main.js` in the repository root. You can serve it without npm. The TypeScript/Vite build has passed clean-clone CI on Node.js 22 for Windows and Linux. The browser-ready `main.js` is still the direct launch option; build checks do not prove all browser interactions. No Python packages or `venv` are required.
 
 If you specifically want to work on the TypeScript/Vite pipeline, install Node.js 22 and run:
 
@@ -38,7 +38,7 @@ npm ci
 npm run dev
 ```
 
-Open the URL printed by Vite and check the browser console. **A TypeScript build passing is not yet confirmed.**
+Open the URL printed by Vite and check the browser console. **Build verification:** `npm ci` and `npm run build` passed on clean Windows and Linux CI runners using Node.js 22. To reproduce, run `npm run build` separately after `npm ci`. UI behavior and PWA installation still require browser testing.
 
 ---
 

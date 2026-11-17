@@ -1,6 +1,6 @@
 import { deleteTask, toggleTaskCompletion, updateTask } from '@/lib/storage';
 import { Task } from '@/types/task';
-import { autoAnimate } from '@formkit/auto-animate';
+import autoAnimate from '@formkit/auto-animate';
 import { formatDistanceToNow } from 'date-fns';
 
 export class TaskCard extends HTMLElement {
@@ -26,8 +26,9 @@ export class TaskCard extends HTMLElement {
   connectedCallback() {
     this.render();
     // Apply animations
-    if (this.shadowRoot) {
-      autoAnimate(this.shadowRoot);
+    const card = this.shadowRoot?.querySelector<HTMLElement>('.card');
+    if (card) {
+      autoAnimate(card);
     }
   }
 
