@@ -1,5 +1,48 @@
 # TaskFlow Pro - The 2025 Edition
 
+## Windows 11: run the actual app (PowerShell)
+
+This repo includes a browser-ready `index.html` and `main.js`. The most reliable **basic launch** does **not** require npm or compiling TypeScript. Install Git and Python 3, then run **each command separately**:
+
+```powershell
+git clone https://github.com/Tyler-Keesee/TypeScript-ToDo-List.git
+```
+
+```powershell
+Set-Location .\TypeScript-ToDo-List
+```
+
+```powershell
+python -m http.server 8000
+```
+
+Open **http://localhost:8000/** in Edge while the command runs; Ctrl+C stops the server.
+
+**Run the actual shipped app:** index.html currently references the compiled `main.js` in the repository root. You can serve it without npm. The separate TypeScript/Vite build configuration is experimental and may need additional repairs; do not assume `npm run build` succeeds. No Python packages or `venv` are required.
+
+If you specifically want to work on the TypeScript/Vite pipeline, install Node.js 22 and run:
+
+```powershell
+node --version
+```
+
+```powershell
+npm --version
+```
+
+```powershell
+npm ci
+```
+
+```powershell
+npm run dev
+```
+
+Open the URL printed by Vite and check the browser console. **A TypeScript build passing is not yet confirmed.**
+
+---
+
+
 A cutting-edge task management application built with modern web technologies.
 
 ## Features
