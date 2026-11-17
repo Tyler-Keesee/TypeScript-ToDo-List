@@ -1,6 +1,6 @@
 import { deleteTask, toggleTaskCompletion, updateTask } from '@/lib/storage';
 import { Task } from '@/types/task';
-import { autoAnimate } from '@formkit/auto-animate';
+import autoAnimate from '@formkit/auto-animate';
 import { formatDistanceToNow } from 'date-fns';
 
 export class TaskCard extends HTMLElement {
