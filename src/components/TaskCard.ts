@@ -26,8 +26,9 @@ export class TaskCard extends HTMLElement {
   connectedCallback() {
     this.render();
     // Apply animations
-    if (this.shadowRoot) {
-      autoAnimate(this.shadowRoot);
+    const card = this.shadowRoot?.querySelector<HTMLElement>('.card');
+    if (card) {
+      autoAnimate(card);
     }
   }
 
